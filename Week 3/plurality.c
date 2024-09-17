@@ -1,0 +1,121 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+// Max number of candidates
+#define MAX 9
+
+// Candidates have name and vote count
+typedef struct
+{
+    string name;
+    int votes;
+} candidate;
+
+// Array of candidates
+candidate candidates[MAX];
+
+// Number of candidates
+int candidate_count;
+
+// Function prototypes
+bool vote(string name);
+void print_winner(void);
+void sortCandidates();
+void swap(int i1, int i2);
+
+int main(int argc, string argv[])
+{
+    // Check for invalid usage
+    if (argc < 2)
+    {
+        printf("Usage: plurality [candidate ...]\n");
+        return 1;
+    }
+
+    // Populate array of candidates
+    candidate_count = argc - 1;
+    if (candidate_count > MAX)
+    {
+        printf("Maximum number of candidates is %i\n", MAX);
+        return 2;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        candidates[i].name = argv[i + 1];
+        candidates[i].votes = 0;
+    }
+
+    int voter_count = get_int("Number of voters: ");
+
+    // Loop over all voters
+    for (int i = 0; i < voter_count; i++)
+    {
+        string name = get_string("Vote: ");
+
+        // Check for invalid vote
+        if (!vote(name))
+        {
+            printf("Invalid vote.\n");
+        }
+    }
+
+    // Display winner of election
+    print_winner();
+}
+
+// Update vote totals given a new vote
+bool vote(string name)
+{
+    int i = 0;
+    while (i < candidate_count)
+    {
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            candidates[i].votes++;
+            return true;
+        }
+        i++;
+    }
+    return false;
+}
+
+// Print the winner (or winners) of the election
+void print_winner(void)
+{
+
+    sortCandidates();
+    int winnerVotes = candidates[candidate_count - 1].votes;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == winnerVotes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
+    return;
+}
+
+void sortCandidates()
+{
+    bool noSwaps;
+    for (int j = candidate_count; j > 0; j--)
+    {
+        noSwaps = true;
+        for (int i = 0; i < j - 1; i++)
+        {
+            if (candidates[i].votes > candidates[i + 1].votes)
+            {
+                noSwaps = false;
+                swap(i, i + 1);
+            }
+        }
+    }
+}
+
+void swap(int i1, int i2)
+{
+    candidate aux = candidates[i1];
+    candidates[i1] = candidates[i2];
+    candidates[i2] = aux;
+}

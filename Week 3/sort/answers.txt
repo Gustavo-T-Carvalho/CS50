@@ -1,0 +1,19 @@
+sort1 uses: Bubble
+
+How do you know?:
+Knowing that sort2 is already identified as merge sort, I only need to distinguish between bubble sort and selection sort. It’s not possible to differentiate them by the average case (randomized array) since both are upper-bounded
+by the complexity of n². However, bubble sort, if implemented with a check to see if no swaps were made in the last complete pass through the array (outer loop), is lower-bounded by Ω(n) = n. Therefore,
+I ran sort1 and sort3 on the file sorted50000.txt and found that sort1 completed almost instantly while sort3 took several seconds to finish. I concluded that sort1 is bubble sort.
+
+sort2 uses: Merge
+
+How do you know?:
+Knowing that the sorting algorithms have different complexities, I know that merge sort will have a time complexity of n log n for any case (even for an already sorted set).
+Bubble sort and selection sort, on the other hand, have a time complexity of n² for reverse-ordered sets (this is a degenerate case for them where they have to make the maximum number of comparisons).
+Knowing that the disparity in processing time will be more noticeable the larger N is, I focused on the largest set, which is 50,000 (reversed50000.txt).
+Since the time for sort2 was practically instantaneous and the sorting algorithms sort1 and sort3 took several seconds to complete, I concluded that sort2 is a merge sort.
+
+sort3 uses: Selection
+
+How do you know?:
+Following the steps demonstrated to identify which algorithm was merge sort and which was bubble sort, it remains that sort3, by elimination, must be selection sort.
