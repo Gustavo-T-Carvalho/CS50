@@ -4,7 +4,7 @@ from random import choice
 
 
 def main():
-    mode = 1
+    mode = 2
     clear = lambda: os.system("cls")
     
     # Treat CMD Variable
@@ -22,7 +22,7 @@ def main():
         possibleResults = {0: "tie", 1: "x wins", 2: "o wins"}
         result = 0
         xo = choice(["x", "o"])
-        positions = [" ","o","x"," ","x"," ","o","o","x"]#[" "] * 9
+        positions = [" "] * 9
         
 
         printBoard(positions, clear)
@@ -47,8 +47,9 @@ def main():
             xo = changeXo(xo)
 
         print(f"Resultado: {possibleResults[result]}. Quantidade de rodadas: {turn}")
+        
         playAgain = input("Jogar novamente?(s/n)")
-        if(playAgain == "n"):
+        if(playAgain != "s"):
             break
 
 
@@ -190,7 +191,7 @@ def buildAiDecisionTree(mode, winningConditions, xo):
     emptyState = {
         "sum": 0,
         "possibleScenarios": [],
-        "positions": [" ","o","x"," ","x"," ","o","o","x"],#[" "] * 9,
+        "positions": [" "] * 9,
         "lastPLayed": None,
     }
 
