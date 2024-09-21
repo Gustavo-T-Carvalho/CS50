@@ -1,0 +1,24 @@
+HTML tags:
+
+- header
+- nav
+- div
+- button
+- span
+- ul
+- li
+- h1
+- iframe
+- p
+- a
+- i
+
+CSS propertiers
+- display
+- flex-direction
+- flex-wrap
+- object-fit
+- border-radius
+
+I used javascript to pause the videos of the carousel when someone clicks on the pointers, in that way I avoid that one video keeps playing while hidden by the carousel.
+I used the bootstrap to build the Navbar from my page

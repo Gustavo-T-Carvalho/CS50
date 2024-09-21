@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f32c4b714f.js" crossorigin="anonymous"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const carouselButtons = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+                for (let i = 0; i < carouselButtons.length; i++) {
+                    carouselButtons[i].addEventListener('click', pauseAllVideos);
+                }
+            });
+
+
+            var pauseAllVideos = function() {
+                document.querySelectorAll('iframe').forEach(v => { v.src = v.src });
+            };
+        </script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                         aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="btn btn-primary" href="/index.html" role="button">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Hobbies
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/climbing.html">Climbing</a></li>
+                                        <li><a class="dropdown-item" href="/soccer.html"> Soccer</a></li>
+                                        <li><a class="dropdown-item" href="/guitar.html">Guitar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div>
+                <h1>Climbing</h1>
+            </div>
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/ji4At78H5Ys?si=MMipD2MPfaGPy9re"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/uAh_fJn93MM?si=EYlJVqw1JulsCSE0"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/jS0gs1Zoxm8?si=lvAI1J1tDst3W97a"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div>
+                <p>
+                    Climbing is a passion that goes beyond mere sport; it’s an exhilarating blend of physical challenge
+                    and
+                    mental focus. Whether I’m at an indoor gym learning new techniques or out on a stunning rock face,
+                    each
+                    climb feels like a unique adventure.
+                </p>
+                <p>
+                    Starting indoors is a great way to build strength and confidence, but nothing compares to the thrill
+                    of
+                    tackling natural formations. Each route is a puzzle to solve, pushing me to think strategically
+                    while
+                    staying calm under pressure. This mental aspect keeps me engaged and eager to improve.
+                </p>
+                <p>
+                    The climbing community is incredibly supportive. Sharing tips, celebrating each other’s victories,
+                    and
+                    forging friendships make every session memorable. Climbing not only builds physical
+                    fitness—strength,
+                    flexibility, and endurance—but also boosts my confidence in ways that extend far beyond the wall.
+                </p>
+                <p>
+                    Ultimately, it’s about the journey: the challenges I face and the connections I make. Climbing has
+                    become a lifelong passion, filled with endless adventures and personal growth.
+                </p>
+            </div>
+        </div>
+
+
+        <footer>
+
+
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/gustavotcarvalho/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Gustavo-T-Carvalho"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header {
+    flex-shrink: 0;
+}
+
+.content {
+    flex-grow: 1;
+    overflow: auto;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+    height: 110vh;
+}
+
+footer {
+    background-color: #bcdaff;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#profile-photo {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 50vh;
+    width: 50vh;
+    padding: 15px;
+}
+
+.description {
+    padding: 15px;
+}
+
+i{
+    padding:0.25em;
+    font-size: 30px
+}
