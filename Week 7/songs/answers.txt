@@ -1,0 +1,38 @@
+Purple: This aura color pairs well with passionate music listeners. Purple auras tune in to get amped up, entertained, and moving while they navigate the twists and turns of their day.
+Green: Calm, analytical, and introspective are the traits that describe a green aura. These listeners gravitate toward complex music to tame their fast-moving minds.
+Pink: Often described as the hopeless romantics of the aura spectrum, pinks view the world with a sense of optimistic, childlike wonder.
+Orange: Oranges are the rebellious and bold type. They share a need for high-energy, confidence-boosting sounds.
+Yellow: Yellows like their music to align them to the goals of their day, fueling their need for focus, motivation, and self improvement all while reducing any nerves that could get in the way.
+Blue: Blues are wistful or emotional, and this hue reflects listeners who seek out music to feel their feelings out loud.
+
+Given the above text extracted from: https://newsroom.spotify.com/2021-12-01/learn-more-about-the-audio-aura-in-your-spotify-2021-wrapped-with-aura-reader-mystic-michaela/ I classified the six colors into
+what values are expected from the three chosen variables: ENERGY, VALENCE and DANCEABILITY. The values are shown in the following table.
+
+                | Purple | Green  |  Pink  | Orange | Yellow |  Blue  |
+Energy          | High   |  Low   |  Mid   | High   |  Mid   |  Low   |
+Valence         | Mid    |  Mid   |  High  | High   |  High  |  Low   |
+Danceability    | High   |  Low   |  High  |  Mid   |  Mid   |  Low   |
+
+The following values are used to classify the grade of a value into low, mid and high:
+Low:  0.0 - 0.3
+Mid:  0.3 - 0.7
+High: 0.7 - 1.0
+
+I did the following SQL search that shows the averages energy, danceability and valence for all songs in the songs table:
+Results for SELECT AVG(danceability), AVG(energy), AVG(valence) FROM songs;
+
+The result is the following table:
+Danceability |    Energy    |   Valence   |
+   0.71646   |    0.65906   |   0.484443  |
+
+It's possible to classify this result into:
+Danceability |    Energy    |   Valence   |
+   High      |    Mid/High  |     Mid     |
+
+Given those values the closest color is the purple color.
+
+
+Keep in mind that this approach is naive and in a productive environment as Spotify Wrapped I would suggest tests and calibration of these parameters. In addition it's possible to consider this classification, as the colors imply,
+as a color spectrum in which someone tends to one color.There isn't an exact solution or color to a person. There are too many variables in a year of listening. The mood of a given person will change in a range in the year and
+that can impact in their music listening habits. Other point to keep in mind is to add a weight to songs based on how many times the user listened to them in the last year. If that selection of 100 songs had 99 musics listened once
+and one specific song played 100 times is important for this repeated one to contribute more to the averages.
