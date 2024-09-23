@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Stock Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{quoted.symbol}}</td>
+                <td>{{quoted.name}}</td>
+                <td>{{quoted.price | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

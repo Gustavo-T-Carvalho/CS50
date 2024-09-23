@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Unit. Price</th>
+                <th>Total Price</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+
+            {% for stock in stocks%}
+                <tr>
+                    <td>{{stock.symbol}}</td>
+                    <td>{{stock.name}}</td>
+                    <td>{{stock.shares}}</td>
+                    <td>{{stock.price}}</td>
+                    <td>{{stock.total}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>User Cash</th>
+                <th>User Grand Total</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{user.cash}}</td>
+                <td>{{user.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

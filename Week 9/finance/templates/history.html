@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Operation</th>
+                <th>Shares</th>
+                <th>Unit. Price</th>
+                <th>Total Price</th>
+                <th>Date</th>
+            </tr>
+
+
+        </thead>
+        <tbody>
+
+            {% for entry in history %}
+                <tr>
+                    <td>{{entry.symbol}}</td>
+                    <td>{{entry.operation}}</td>
+                    <td>{{entry.shares}}</td>
+                    <td>{{entry.unitary_price}}</td>
+                    <td>{{entry.total_price}}</td>
+                    <td>{{entry.date}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
